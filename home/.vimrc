@@ -68,5 +68,9 @@ call spacevim#bootstrap()
   set shiftwidth=2
   set expandtab
   set number
+
+  set directory=~/.vimdata//
+  set undodir=~/.vimdata
+  set undofile
 " }}}
 
