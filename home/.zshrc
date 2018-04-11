@@ -1,29 +1,25 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-# Theme to use, bullet-train is slick.
-ZSH_THEME="bullet-train"
 
-# Autostart tmux at login.
-ZSH_TMUX_AUTOSTART="true"
+# Ensure our custom themes will be found
+fpath=( ~/.zpreztothemes "${fpath[@]}" )
 
-# Enable command auto-correction.
-ENABLE_CORRECTION="true"
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-# Custom theme path.
-ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+# Customize to your needs...
+export TERM='xterm'
 
-# List of plugins to install, no commas.
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux history-substring-search last-working-dir)
+#ZLE_RPROMPT_INDENT=0
+alias sudo="sudo "
+alias vim="nvim"
+alias vi="nvim"
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# Preferred editor
-export EDITOR='vim'
-
-# Program aliases
-alias vomit="vim"
-alias fuck="sudo !!"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
