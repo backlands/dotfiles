@@ -21,3 +21,9 @@ augroup watchvimrc
   au!
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
+
+" Blank startify cowsay
+let g:startify_custom_header = []
+
+" Set NerdTree shortcut
+map <C-n> :NERDTreeToggle<CR>
