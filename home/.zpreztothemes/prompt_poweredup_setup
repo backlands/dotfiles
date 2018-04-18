@@ -9,8 +9,6 @@
 # Authors:
 #   David Rice <me@davidjrice.co.uk>
 
-ZLE_RPROMPT_INDENT=0
-
 ZSH_THEME_REP_TIME_SINCE_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_REP_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_REP_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[cyan]%}"
