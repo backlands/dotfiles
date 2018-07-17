@@ -33,7 +33,8 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency -b
+#bindsym $mod+d exec --no-startup-id dmenu_run -b -fn 'Noto-14' -nb '#44475A' -nf '#F8F8F2' -sb '#5AF78E' -sf '#282A36'
+bindsym $mod+d exec --no-startup-id rofi -show run -theme solarized
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -56,7 +57,7 @@ bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+F1 exec termite
-bindsym $mod+F2 exec chromium
+bindsym $mod+F2 exec google-chrome
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -151,7 +152,7 @@ set $ws8 8
 
 # switch to workspace
 # bindsym $mod+1 workspace $ws1
-bindsym $mod+1 workspace $ws1; exec [ $(ps h -C chromium | wc -l) = 0 ] && /usr/bin/chromium
+bindsym $mod+1 workspace $ws1; exec [ $(ps h -C google-chrome | wc -l) = 0 ] && /usr/bin/chromium
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C termite | wc -l) = 0 ] && /usr/bin/termite
 bindsym $mod+3 workspace $ws3; exec [ $(ps h -C code | wc -l) = 0 ] && /usr/bin/code
 bindsym $mod+4 workspace $ws4
@@ -274,7 +275,7 @@ bindsym $mod+9 exec --no-startup-id $HOME/.config/scripts/lock.sh $HOME/.i3/lock
 # Autostart applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id compton -b
 exec --no-startup-id conky
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager

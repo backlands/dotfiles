@@ -1,12 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-icon="$HOME/.config/.xlock/icon.png"
-tmpbg='/tmp/screen.png'
+scrot /tmp/screen.png
+convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
 
-(( $# )) && { icon=$1; }
+if [[ -f /tmp/screen.png ]]
+  then
+    i3lock -i /tmp/screen.png
+  else
+    echo "Error"
+fi
 
-scrot "$tmpbg"
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
-convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-i3lock -u -i "$tmpbg"
-
+dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+rm /tmp/screen.png
