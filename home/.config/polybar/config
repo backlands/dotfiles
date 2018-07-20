@@ -8,46 +8,21 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color8}
-foreground = ${xrdb:color15}
-
-; black dark/light
-color0 = ${xrdb:color0}
-color8 = ${xrdb:color8}
-
-; red dark/light
-color1 = ${xrdb:color1}
-color9 = ${xrdb:color9}
-
-; green dark/light
-color2 = ${xrdb:color2}
-color10 = ${xrdb:color10}
-
-; yellow dark/light
-color3 = ${xrdb:color3}
-color11 = ${xrdb:color11}
-
-; blue dark/light
-color4 = ${xrdb:color4}
-color12 = ${xrdb:color12}
-
-; magenta dark/light
-color5 = ${xrdb:color5}
-color13 = ${xrdb:color13}
-
-; cyan dark/light
-color6 = ${xrdb:color6}
-color14 = ${xrdb:color14}
-
-; white dark/light
-color7 = ${xrdb:color7}
-color15 = ${xrdb:color15}
-
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+current    = #44475A
+red = ${xrdb:color1}
+green = ${xrdb:color2}
+yellow = ${xrdb:color3}
+orange = #FFB86C
+blue = {xrdb:color4}
+pink = ${xrdb:color5}
+cyan = ${xrdb:color6}
 
 [bar/primary]
 monitor = ${env:MONITOR:LVDS-1}
 width = 100%
-height = 25
+height = 28
 bottom = true
 ;offset-x = 1%
 ;offset-y = 1%
@@ -57,8 +32,8 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+line-size = 2
+line-color = ${colors.background}
 
 border-size = 0
 border-color = 
@@ -69,10 +44,11 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = inputmono:pixelsize=10;2
+font-0 = inputmono:style=Bold:pixelsize=10;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Font Awesome 5 Free:style=Solid:pixelsize=13;4
 font-3 = Font Awesome 5 Brands:pixelsize=13;4
+font-4 = "Material Icons:style=Regular:size=18;6"
 
 modules-left = i3
 modules-center = xwindow 
@@ -110,55 +86,61 @@ wrapping-scroll = false
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
+ws-icon-3 = 7;
+ws-icon-4 = 8;
 ws-icon-default = 
 
 label-mode-padding = 2
-label-mode-foreground = ${colors.color0}
-label-mode-background = ${colors.color2}
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.foreground}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${colors.color2}
-label-focused-foreground = ${colors.color0}
-label-focused-padding = 2
+label-focused-background = ${colors.current}
+label-focused-foreground = ${colors.cyan}
+label-focused-padding = 4
+label-focused-overline = ${colors.pink}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
+label-unfocused-foreground = ${colors.foreground}
 label-unfocused-padding = ${self.label-focused-padding}
+label-unfocused-overline = ${colors.background}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
+label-visible-overline = ${colors.background}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = ${colors.color9}
+label-urgent-foreground = ${colors.orange}
+label-urgent-background = ${colors.background}
 label-urgent-padding = ${self.label-focused-padding}
+label-urgent-overline = ${colors.red}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 
-format-padding = 1
-format-prefix = " "
-format-foreground = ${colors.color0}
-format-background = ${colors.color2}
+format-padding = 0
+format-prefix = ""
+format-foreground = ${colors.green}
+format-background = ${colors.background}
 
-label = %percentage:2%%
+label = %{F#F8F8F2}%percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 
-format-padding = 1
-format-prefix = " "
-format-foreground = ${colors.color0}
-format-background = ${colors.color6}
+format-padding = 0
+format-prefix = ""
+format-foreground = ${colors.green}
+format-background = ${colors.background}
 
-label = %percentage_used%%
+label = %{F#F8F8F2}%percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -167,15 +149,15 @@ interval = 3.0
 
 format-connected-padding = 1
 format-connected-prefix = " "
-format-connected-foreground = ${colors.color0}
-format-connected-background = ${colors.color3}
+format-connected-foreground = ${colors.green}
+format-connected-background = ${colors.background}
 format-connected = <label-connected>
 label-connected = %essid%
 
 format-disconnected-padding = 1
 format-disconnected-prefix = " "
-format-disconnected-foreground = ${colors.color0}
-format-disconnected-background = ${colors.color8}
+format-disconnected-foreground = ${colors.red}
+format-disconnected-background = ${colors.background}
 format-disconnected =
 
 [module/eth]
@@ -185,46 +167,35 @@ interval = 3.0
 
 format-connected-padding = 1
 format-connected-prefix = "lan "
-format-connected-foreground = ${colors.color0}
-format-connected-background = ${colors.color3}
+format-connected-foreground = ${colors.green}
+format-connected-background = ${colors.background}
 
 label-connected = %local_ip%
 
 format-disconnected-padding = 1
 format-disconnected-prefix = cpu
-format-disconnected-foreground = ${colors.color0}
-format-disconnected-background = ${colors.color3}
+format-disconnected-foreground = ${colors.red}
+format-disconnected-background = ${colors.background}
 format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
-
-date = " %Y-%m-%d"
-
-time = %H:%M:%S
-
-format-padding = 1
-format-prefix = " "
-format-foreground = ${colors.color0}
-format-background = ${colors.color1}
-
-label = %date% %time%
+date = %%{F#BD93F9} %%{F#F8F8F2}%b %e, %%{F#bd93f9}%H:%M%%{F-}
 
 [module/volume]
 type = internal/volume
 
 format-volume-padding = 1
-format-volume-foreground = ${colors.color0}
-format-volume-background = ${colors.color12}
+format-volume-foreground = ${colors.green}
+format-volume-background = ${colors.background}
 format-volume = <label-volume> <bar-volume>
 
 label-volume = vol
-label-volume-foreground = ${colors.color0}
+label-volume-foreground = ${colors.green}
 
 format-muted-padding = 1
-format-muted-foreground = ${colors.color0}
-format-muted-background = ${colors.color12}
+format-muted-foreground = ${colors.red}
+format-muted-background = ${colors.background}
 label-muted = sound muted
 
 bar-volume-width = 10
@@ -242,7 +213,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.color0}
+bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
@@ -252,20 +223,21 @@ full-at = 90
 
 format-charging-padding = 1
 format-charging-font = 2
-format-charging-prefix = " "
-format-charging-foreground = ${colors.color0}
-format-charging-background = ${colors.color2}
-format-charging = <label-charging>
+format-charging-prefix = ""
+format-charging-foreground = ${colors.orange}
+format-charging-background = ${colors.background}
+format-charging = %{F#F8F8F2}<label-charging>
 
 format-discharging-padding = 1
-format-discharging-prefix = " "
-format-discharging-foreground = ${colors.color0}
-format-discharging-background = ${colors.color11}
-format-discharging = <label-discharging>
+format-discharging-prefix = ""
+format-discharging-foreground = ${colors.red}
+format-discharging-background = ${colors.background}
+format-discharging = %{F#F8F8F2}<label-discharging>
 
-format-full-foreground = ${colors.color0}
+format-full-foreground = ${colors.green}
 format-full-padding = 1
-format-full-background = ${colors.color10}
+format-full-background = ${colors.background}
+format-full-prefix = ""
 format-full = 
 
 [settings]
