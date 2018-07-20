@@ -52,7 +52,7 @@ font-4 = "Material Icons:style=Regular:size=18;6"
 
 modules-left = i3
 modules-center = xwindow 
-modules-right = cpu memory battery date
+modules-right = volume cpu memory battery date
 
 tray-position = right
 tray-padding = 2
