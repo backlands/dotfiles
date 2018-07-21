@@ -63,7 +63,7 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 
 # Start Applications
 bindsym $mod+F1 exec termite
-bindsym $mod+F2 exec google-chrome
+bindsym $mod+F2 exec chromium-browser
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -158,13 +158,13 @@ set $ws8 8
 
 # switch to workspace
 # bindsym $mod+1 workspace $ws1
-bindsym $mod+1 workspace $ws1; exec [ $(ps h -C google-chrome | wc -l) = 0 ] && /usr/bin/chromium
-bindsym $mod+2 workspace $ws2; exec [ $(ps h -C termite | wc -l) = 0 ] && /usr/bin/termite
+bindsym $mod+1 workspace $ws1; exec [ $(ps h -C chromium-browser | wc -l) = 0 ] && /usr/bin/chromium-browser
+bindsym $mod+2 workspace $ws2; exec [ $(ps h -C termite | wc -l) = 0 ] && /usr/local/bin/termite
 bindsym $mod+3 workspace $ws3; exec [ $(ps h -C code | wc -l) = 0 ] && /usr/bin/code
-bindsym $mod+4 workspace $ws4
+bindsym $mod+4 workspace $ws4; exec [ $(ps h -C prepros | wc -l) = 0 ] && /usr/bin/prepros
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7; exec [ $(ps h -C gpmdp | wc -l) = 0 ] && /usr/bin/gpmdp
+bindsym $mod+7 workspace $ws7; exec /snap/bin/google-play-music-desktop-player
 bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
@@ -189,12 +189,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
-assign [class="Google-chrome"] $ws1
+assign [class="Chromium"] $ws1
 assign [class="Termite"] $ws2
 assign [class="Code"] $ws3
+assign [class="Google Play Music Desktop Player"] $ws7
 
 # Open specific applications in floating mode
-for_window [class="Google Play Music Desktop Player"] floating enabled
+# for_window [class="Google Play Music Desktop Player"] floating enabled
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -210,15 +211,12 @@ for_window [title="MuseScore: Play Panel"] floating enable
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
