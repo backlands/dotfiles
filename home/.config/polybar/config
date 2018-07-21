@@ -44,7 +44,7 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = inputmono:style=Bold:pixelsize=10;3
+font-0 = inputmono:pixelsize=10;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Font Awesome 5 Free:style=Solid:pixelsize=13;4
 font-3 = Font Awesome 5 Brands:pixelsize=13;4
@@ -92,7 +92,7 @@ ws-icon-default = 
 
 label-mode-padding = 2
 label-mode-foreground = ${colors.background}
-label-mode-background = ${colors.foreground}
+label-mode-background = ${colors.red}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
