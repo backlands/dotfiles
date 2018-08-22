@@ -165,7 +165,7 @@ bindsym $mod+4 workspace $ws4; exec [ $(ps h -C prepros | wc -l) = 0 ] && /usr/b
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7; exec /snap/bin/google-play-music-desktop-player
-bindsym $mod+8 workspace $ws8
+bindsym $mod+8 workspace $ws8; exec [ $(ps h -C keepassxc | wc -l) = 0 ] && /usr/bin/keepassxc 
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
