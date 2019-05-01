@@ -18,7 +18,6 @@ fi
 export TERM='xterm'
 
 #ZLE_RPROMPT_INDENT=0
-alias sudo="sudo "
 alias vim="nvim"
 alias vi="nvim"
 
