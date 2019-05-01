@@ -1,3 +1,6 @@
 [submodule "home/.zprezto"]
 	path = home/.zprezto
 	url = https://github.com/sorin-ionescu/prezto
+[submodule "home/.themes"]
+	path = home/.themes
+	url = https://github.com/addy-dclxvi/gtk-theme-collections
