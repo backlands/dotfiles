@@ -24,3 +24,6 @@ alias vi="nvim"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+# Output my MOTD
+source "$HOME/.config/scripts/motd.sh"
