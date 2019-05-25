@@ -41,50 +41,50 @@ scrollbar = off
 [colors]
 
 # special
-foreground      = #f8f8f2
-foreground_bold = #f8f8f2
-cursor          = #f8f8f2
+foreground      = #BFBFBF
+foreground_bold = #BFBFBF
+cursor          = #BFBFBF
 background      = rgba( 40,42,54,0.95 )
 
 # black
-color0  = #000000
-color8  = #4d4d4d
+color0  = #282a36
+color8  = #44475A
 
 # red
-color1  = #ff5555
-color9  = #ff6e67
+color1  = #FF5555
+color9  = #FF6E67
 
 # green
-color2  = #50fa7b
-color10 = #5af78e
+color2  = #50FA7B
+color10 = #5AF78E
 
 # yellow
-color3  = #f1fa8c
-color11 = #f4f99d
+color3  = #F1FA8C
+color11 = #F4F99D
 
-# blue
-color4  = #bd93f9
-color12 = #caa9fa
+# purple
+color4  = #BD93F9
+color12 = #CAA9FA
 
-# magenta
-color5  = #ff79c6
-color13 = #ff92d0
+# pink
+color5  = #FF79C6
+color13 = #FF92D0
 
 # cyan
-color6  = #8be9fd
-color14 = #9aedfe
+color6  = #8BE9FD
+color14 = #9AEDFE
 
 # white
-color7  = #bfbfbf
-color15 = #e6e6e6
+color7  = #BFBFBF
+color15 = #FFB86C
 
 [hints]
 font = Input Mono 9
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+foreground = #dcdccc
+background = #3f3f3f
+active_foreground = #e68080
+active_background = #3f3f3f
+padding = 2
+border = #3f3f3f
+border_width = 0.5
+roundness = 2.0

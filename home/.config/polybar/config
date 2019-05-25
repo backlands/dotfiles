@@ -10,12 +10,12 @@
 [colors]
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
-current    = #44475A
+current    = ${xrdb:color8}
 red = ${xrdb:color1}
 green = ${xrdb:color2}
 yellow = ${xrdb:color3}
-orange = #FFB86C
-blue = {xrdb:color4}
+orange = ${xrdb:color15}
+purple = ${xrdb:color4}
 pink = ${xrdb:color5}
 cyan = ${xrdb:color6}
 
@@ -34,8 +34,8 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = ${colors.background}
 
-border-size = 0
-border-color = 
+border-size = 1
+border-color = ${colors.current}
 
 padding-left = 0
 padding-right = 1
@@ -50,8 +50,8 @@ font-3 = Font Awesome 5 Brands:pixelsize=13;4
 font-4 = "Material Icons:style=Regular:size=18;6"
 
 modules-left = i3
-modules-center = xwindow 
-modules-right = volume cpu memory battery date
+modules-center = xwindow
+modules-right = volume cpu memory eth battery date
 
 tray-position = right
 tray-padding = 2
@@ -96,10 +96,10 @@ label-mode-background = ${colors.red}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${colors.current}
-label-focused-foreground = ${colors.cyan}
+label-focused-background = ${colors.cyan}
+label-focused-foreground = ${colors.current}
 label-focused-padding = 4
-label-focused-overline = ${colors.pink}
+label-focused-overline = ${colors.cyan}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
@@ -115,10 +115,10 @@ label-visible-overline = ${colors.background}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-foreground = ${colors.orange}
-label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.orange}
 label-urgent-padding = ${self.label-focused-padding}
-label-urgent-overline = ${colors.red}
+label-urgent-overline = ${colors.orange}
 
 [module/cpu]
 type = internal/cpu
@@ -162,12 +162,12 @@ format-disconnected =
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = enp0s31f6
 interval = 3.0
 
 format-connected-padding = 1
 format-connected-prefix = "lan "
-format-connected-foreground = ${colors.green}
+format-connected-foreground = ${colors.orange}
 format-connected-background = ${colors.background}
 
 label-connected = %local_ip%
@@ -238,7 +238,7 @@ format-full-foreground = ${colors.green}
 format-full-padding = 1
 format-full-background = ${colors.background}
 format-full-prefix = ""
-format-full = 
+format-full =
 
 [settings]
 screenchange-reload = true
