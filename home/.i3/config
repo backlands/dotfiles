@@ -21,7 +21,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Noto Sans 10
+font xft:Input Sans 10
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -165,7 +165,7 @@ bindsym $mod+4 workspace $ws4; exec [ $(ps h -C prepros | wc -l) = 0 ] && /usr/b
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7; exec /snap/bin/google-play-music-desktop-player
-bindsym $mod+8 workspace $ws8; exec [ $(ps h -C keepassxc | wc -l) = 0 ] && /usr/bin/keepassxc 
+bindsym $mod+8 workspace $ws8; exec [ $(ps h -C keepassxc | wc -l) = 0 ] && /usr/bin/keepassxc
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -284,10 +284,10 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id conky
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id pamac-tray
+exec --no-startup-id pamac-tray
 #exec --no-startup-id clipit
 exec --no-startup-id insync start
-exec --no-startup-id xautolock -time 10 -locker $LOCKER lock 
+exec --no-startup-id xautolock -time 10 -locker $LOCKER lock
 #exec_always --no-startup-id ff-theme-util
 #exec_always --no-startup-id fix_xcursor
 
