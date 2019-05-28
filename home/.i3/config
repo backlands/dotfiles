@@ -63,7 +63,7 @@ bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
 
 # Start Applications
 bindsym $mod+F1 exec termite
-bindsym $mod+F2 exec chromium-browser
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -160,11 +160,11 @@ set $ws8 8
 # bindsym $mod+1 workspace $ws1
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C termite | wc -l) = 0 ] && /usr/bin/termite
-bindsym $mod+3 workspace $ws3; exec [ $(ps h -C code | wc -l) = 0 ] && /usr/bin/code
-bindsym $mod+4 workspace $ws4; exec [ $(ps h -C prepros | wc -l) = 0 ] && /usr/bin/prepros
+bindsym $mod+3 workspace $ws3; exec [ $(ps h -C code-oss | wc -l) = 0 ] && /usr/bin/code
+bindsym $mod+4 workspace $ws4;
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7; exec /snap/bin/google-play-music-desktop-player
+bindsym $mod+7 workspace $ws7;
 bindsym $mod+8 workspace $ws8; exec [ $(ps h -C keepassxc | wc -l) = 0 ] && /usr/bin/keepassxc
 
 # Move focused container to workspace
@@ -220,6 +220,10 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="insync.py"] floating enable
+for_window [class="Slack"] floating enable
+for_window [class="Discord"] floating enable
+for_window [class="Steam"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
