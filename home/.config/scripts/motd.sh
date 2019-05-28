@@ -9,7 +9,4 @@ echo ''
 echo '                                 Welcome spawn of satan...   '
 echo ''
 
-
-
-
-
+neofetch
