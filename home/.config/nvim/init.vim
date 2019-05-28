@@ -19,9 +19,9 @@ Plug 'VundleVim/Vundle.vim'
 
 " Load some bundles
 " Themes
-" Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Linting
 " Plug 'scrooloose/syntastic'
