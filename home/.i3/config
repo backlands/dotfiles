@@ -148,6 +148,12 @@ bindsym $mod+Ctrl+Shift+d [class="Discord"] scratchpad show
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
+# Move workspace to monitor to the right (toggle when two screens)
+bindsym $mod+x move workspace to output left
+
+# Move container to monitor to the right (toggle when two screens)
+bindsym $mod+Shift+x move container to output left
+
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
