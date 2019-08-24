@@ -143,6 +143,7 @@ bindsym $mod+minus scratchpad show
 # Keybinds for windows always in scratchpad
 bindsym $mod+Ctrl+Shift+m [class="Google Play Music Desktop Player"] scratchpad show
 bindsym $mod+Ctrl+Shift+s [class="Slack"] scratchpad show
+bindsym $mod+Ctrl+Shift+z [class="keepassxc"] scratchpad show
 bindsym $mod+Ctrl+Shift+d [class="Discord"] scratchpad show
 
 #navigate workspaces next / previous
@@ -233,6 +234,7 @@ for_window [class="Xfburn"] floating enable
 for_window [class="insync.py"] floating enable
 for_window [class="Slack"] floating enable move scratchpad
 for_window [class="Discord"] floating enable move scratchpad
+for_window [class="keepassxc"] floating enable move scratchpad
 for_window [class="Steam"] floating enable
 for_window [class="Google Play Music Desktop Player"] floating enable move scratchpad
 for_window [class="Pcmanfm"] floating enable
