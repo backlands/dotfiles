@@ -3,3 +3,9 @@
 	email = me@eric-klempnauer.com
 [push]
 	default = simple
+[alias]
+  tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  vtag = tag --sort=version:refname
+[merge "npm-merge-driver"]
+	name = automatically merge npm lockfiles
+	driver = npx npm-merge-driver merge %A %O %B %P

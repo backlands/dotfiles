@@ -34,7 +34,8 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_run -b -fn 'Noto-14' -nb '#44475A' -nf '#F8F8F2' -sb '#5AF78E' -sf '#282A36'
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+c exec --no-startup-id rofi -show ssh
 bindsym $mod+Shift+i exec --no-startup-id echo $PATH >> .i3_debug
 
 # launch categorized menu

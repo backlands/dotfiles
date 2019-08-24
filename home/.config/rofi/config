@@ -1,3 +1,5 @@
 rofi.theme:       .config/rofi/dracula.rasi
 rofi.combi-modi:  drun,window,ssh
 rofi.font:        InputMono 10
+rofi.terminal:    termite
+rofi.ssh-command: {terminal} -e "{ssh-client} {host}"<Paste>
