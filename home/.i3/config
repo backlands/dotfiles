@@ -174,11 +174,11 @@ set $ws8 8
 bindsym $mod+1 workspace $ws1; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
 bindsym $mod+2 workspace $ws2; exec [ $(ps h -C termite | wc -l) = 0 ] && /usr/bin/termite
 bindsym $mod+3 workspace $ws3; exec [ $(ps h -C code-oss | wc -l) = 0 ] && /usr/bin/code
-bindsym $mod+4 workspace $ws4;
+bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7;
-bindsym $mod+8 workspace $ws8; exec [ $(ps h -C keepassxc | wc -l) = 0 ] && /usr/bin/keepassxc
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -238,6 +238,9 @@ for_window [class="keepassxc"] floating enable move scratchpad
 for_window [class="Steam"] floating enable
 for_window [class="Google Play Music Desktop Player"] floating enable move scratchpad
 for_window [class="Pcmanfm"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Blueman-manager"] floating enable
+for_window [class="Thunar"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -326,9 +329,13 @@ exec --no-startup-id xautolock -time 10 -locker $LOCKER lock
 #exec_always --no-startup-id fix_xcursor
 exec --no-startup-id slack
 exec --no-startup-id gpmdp
+exec --no-startup-id keepassxc
 
-# Requires install of python libraries: xlib, pillow, i3ipc (pip)
-exec_always --no-startup-id python3 $HOME/.config/scripts/bgswitcher.py
+exec --no-startup-id systemd-run --on-calendar="*:00:00" --user -- /usr/bin/feh --no-fehbg --randomize --bg-fill ~/.config/wallpapers/* --bg-fill ~/.config/wallpapers/*
+exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/.config/wallpapers/* --bg-fill ~/.config/wallpapers/*
+
+# Force new wallpaper outside of the timer with hotkey
+bindsym $mod+Shift+p exec feh --no-fehbg --randomize --bg-fill ~/.config/wallpapers/* --bg-fill ~/.config/wallpapers/*
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
