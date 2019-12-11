@@ -15,9 +15,9 @@ new_float normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+# bindsym $mod+u border none
+# bindsym $mod+y border pixel 1
+# bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -33,9 +33,9 @@ bindsym $mod+Return exec termite
 bindsym $mod+Shift+q kill
 
 # start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_run -b -fn 'Noto-14' -nb '#44475A' -nf '#F8F8F2' -sb '#5AF78E' -sf '#282A36'
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
-bindsym $mod+c exec --no-startup-id rofi -show ssh
+bindsym $mod+d exec --no-startup-id rofi -no-lazy-grab -show drun -theme themes/appsmenu.rasi
+bindsym $mod+c exec --no-startup-id rofi -no-lazy-grab -show ssh -theme themes/appsmenu.rasi
+
 bindsym $mod+Shift+i exec --no-startup-id echo $PATH >> .i3_debug
 
 # launch categorized menu
@@ -71,9 +71,7 @@ bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Print exec ~/.config/rofi/scripts/scrotmenu.sh
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -117,9 +115,10 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+w exec ~/.config/rofi/scripts/i3layoutmenu.sh
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -140,8 +139,12 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
+# Keybinds for rofi based option menus
+bindsym $mod+Ctrl+Shift+m exec ~/.config/rofi/scripts/mpdmenu.sh
+bindsym $mod+Ctrl+Shift+n exec ~/.config/rofi/scripts/networkmenu.py
+bindsym $mod+Ctrl+Shift+v exec ~/.config/rofi/scripts/nmvpnmenu.sh
+
 # Keybinds for windows always in scratchpad
-bindsym $mod+Ctrl+Shift+m [class="Google Play Music Desktop Player"] scratchpad show
 bindsym $mod+Ctrl+Shift+s [class="Slack"] scratchpad show
 bindsym $mod+Ctrl+Shift+z [class="KeePassXC"] scratchpad show
 bindsym $mod+Ctrl+Shift+d [class="Discord"] scratchpad show
@@ -272,7 +275,10 @@ mode "$mode_launcher" {
 
 # Set shut down, restart and locking features
 set $LOCKER $HOME/.i3/i3exit
-bindsym $mod+0 mode "$mode_system"
+
+bindsym $mod+0 exec ~/.config/rofi/scripts/powermenu.sh
+
+bindsym $mod+Shift+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $LOCKER lock, mode "default"
@@ -327,6 +333,7 @@ exec --no-startup-id insync start
 exec --no-startup-id xautolock -time 10 -locker $LOCKER lock
 #exec_always --no-startup-id ff-theme-util
 #exec_always --no-startup-id fix_xcursor
+exec --no-startup-id mopidy
 exec --no-startup-id slack
 exec --no-startup-id gpmdp
 exec --no-startup-id keepassxc
