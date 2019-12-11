@@ -10,5 +10,7 @@ if [[ -f /tmp/screen.png ]]
     echo "Error"
 fi
 
-dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+mpc -q pause
+amixer set Master mute
+
 rm /tmp/screen.png

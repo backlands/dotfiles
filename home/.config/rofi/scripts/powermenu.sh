@@ -20,9 +20,13 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
+        mpc -q pause
+        amixer set Master mute
         sleep 1; ~/.config/scripts/lock.sh
         ;;
     $suspend)
+        mpc -q pause
+        amixer set Master mute
         sleep 1; ~/.config/scripts/lock.sh && systemctl suspend
         ;;
     $log_out)
