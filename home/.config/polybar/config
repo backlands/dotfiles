@@ -25,6 +25,7 @@ height = 28
 bottom = true
 ;offset-x = 1%
 ;offset-y = 1%
+dpi = 96
 radius = 0
 fixed-center = false
 
@@ -50,8 +51,8 @@ font-3 = Font Awesome 5 Brands:pixelsize=13;4
 font-4 = "Material Icons:style=Regular:size=18;6"
 
 modules-left = i3
-modules-center = xwindow
-modules-right = volume cpu memory eth battery date
+modules-center = mpd
+modules-right = volume battery date
 
 tray-position = right
 tray-padding = 2
@@ -117,6 +118,29 @@ label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.orange}
 label-urgent-padding = ${self.label-focused-padding}
 label-urgent-overline = ${colors.orange}
+
+[module/mpd]
+type = internal/mpd
+
+; Host where mpd is running (either ip or domain name)
+; Can also be the full path to a unix socket where mpd is running.
+host = 127.0.0.1
+port = 6600
+
+format-playing = <label-song> <bar-progress>
+
+bar-progress-width = 15
+bar-progress-indicator = 
+bar-progress-indicator-foreground = ${colors.purple}
+bar-progress-fill = ─
+bar-progress-fill-foreground = ${colors.green}
+bar-progress-fill-font = 3
+bar-progress-empty = ─
+bar-progress-empty-foreground = ${colors.current}
+bar-progress-empty-font = 3
+
+; Seconds to sleep between progressbar/song timer sync
+interval = 2
 
 [module/cpu]
 type = internal/cpu
