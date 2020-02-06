@@ -140,6 +140,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Keybinds for rofi based option menus
+bindsym $mod+Ctrl+Shift+w exec --no-startup-id "bwmenu -- -theme themes/appsmenu.rasi"
 bindsym $mod+Ctrl+Shift+m exec ~/.config/rofi/scripts/mpdmenu.sh
 bindsym $mod+Ctrl+Shift+n exec ~/.config/rofi/scripts/networkmenu.py
 bindsym $mod+Ctrl+Shift+v exec ~/.config/rofi/scripts/nmvpnmenu.sh
