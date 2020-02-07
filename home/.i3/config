@@ -140,12 +140,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Keybinds for rofi based option menus
-bindsym $mod+Ctrl+Shift+w exec --no-startup-id "bwmenu -- -theme themes/appsmenu.rasi"
+bindsym $mod+Ctrl+Shift+w exec --no-startup-id "bwmenu -- -theme themes/bwmenu.rasi"
 bindsym $mod+Ctrl+Shift+m exec ~/.config/rofi/scripts/mpdmenu.sh
 bindsym $mod+Ctrl+Shift+n exec ~/.config/rofi/scripts/networkmenu.py
 bindsym $mod+Ctrl+Shift+v exec ~/.config/rofi/scripts/nmvpnmenu.sh
 
 # Keybinds for windows always in scratchpad
+bindsym $mod+Ctrl+Shift+b [class="Bitwarden"] scratchpad show
 bindsym $mod+Ctrl+Shift+s [class="Slack"] scratchpad show
 bindsym $mod+Ctrl+Shift+z [class="KeePassXC"] scratchpad show
 bindsym $mod+Ctrl+Shift+d [class="Discord"] scratchpad show
@@ -239,6 +240,7 @@ for_window [class="insync.py"] floating enable
 for_window [class="Slack"] floating enable move scratchpad
 for_window [class="Discord"] floating enable move scratchpad
 for_window [class="KeePassXC"] floating enable move scratchpad
+for_window [class="Bitwarden"] floating enable move scratchpad
 for_window [class="Steam"] floating enable
 for_window [class="Google Play Music Desktop Player"] floating enable move scratchpad
 for_window [class="Pcmanfm"] floating enable
