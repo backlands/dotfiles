@@ -7,8 +7,8 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#define dark     #282a36
-#define gray     #44475A
+#define dark     #16171e
+#define gray     #262833
 #define light    #BFBFBF
 #define medium   #6272A4
 #define cyan     #8BE9FD

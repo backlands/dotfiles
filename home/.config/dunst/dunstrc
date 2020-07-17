@@ -179,18 +179,18 @@
     context = ctrl+mod1+c
 
 [urgency_low]
-    background = "#282A36"
+    background = "#16171e"
     foreground = "#BFBFBF"
     frame_color = "6272A4"
     timeout = 10
 
 [urgency_normal]
-    background = "#282A36"
+    background = "#16171e"
     foreground = "#BFBFBF"
     timeout = 10
 
 [urgency_critical]
-    background = "#282A36"
+    background = "#16171e"
     foreground = "#BFBFBF"
     frame_color = "#FF5555"
     timeout = 60
