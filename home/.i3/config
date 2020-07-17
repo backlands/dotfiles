@@ -141,7 +141,6 @@ bindsym $mod+minus scratchpad show
 
 # Keybinds for rofi based option menus
 bindsym $mod+Ctrl+Shift+w exec --no-startup-id "bwmenu -- -theme themes/bwmenu.rasi"
-bindsym $mod+Ctrl+Shift+m exec ~/.config/rofi/scripts/mpdmenu.sh
 bindsym $mod+Ctrl+Shift+n exec ~/.config/rofi/scripts/networkmenu.py
 bindsym $mod+Ctrl+Shift+v exec ~/.config/rofi/scripts/nmvpnmenu.sh
 
@@ -150,6 +149,7 @@ bindsym $mod+Ctrl+Shift+b [class="Bitwarden"] scratchpad show
 bindsym $mod+Ctrl+Shift+s [class="Slack"] scratchpad show
 bindsym $mod+Ctrl+Shift+z [class="KeePassXC"] scratchpad show
 bindsym $mod+Ctrl+Shift+d [class="Discord"] scratchpad show
+bindsym $mod+Ctrl+Shift+m [class="Google Play Music Desktop Player"] scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
@@ -336,7 +336,6 @@ exec --no-startup-id insync start
 exec --no-startup-id xautolock -time 10 -locker $LOCKER lock
 #exec_always --no-startup-id ff-theme-util
 #exec_always --no-startup-id fix_xcursor
-exec --no-startup-id mopidy
 exec --no-startup-id slack
 exec --no-startup-id keepassxc
 exec --no-startup-id keepassxc-proxy
