@@ -5,6 +5,9 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Setup ZSH NVM
+export NVM_AUTO_USE=true
+source ~/.zshplugs/zsh-nvm/zsh-nvm.plugin.zsh
 
 # Ensure our custom themes will be found
 fpath=( ~/.zpreztothemes "${fpath[@]}" )
