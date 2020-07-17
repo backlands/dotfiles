@@ -52,7 +52,7 @@ font-4 = "Material Icons:style=Regular:size=18;6"
 
 modules-left = i3
 modules-center = mpd
-modules-right = volume battery date
+modules-right = volume battery silent dunst date
 
 tray-position = right
 tray-padding = 2
@@ -72,6 +72,16 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+enable-ipc = true
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-foreground = ${colors.green}
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}%{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}%{A}" &
 
 [module/xwindow]
 type = internal/xwindow
