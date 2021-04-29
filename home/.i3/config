@@ -271,6 +271,9 @@ exec --no-startup-id keepassxc
 exec --no-startup-id keepassxc-proxy
 exec --no-startup-id imwheel
 
+# Spiralish Tiling
+exec --no-startup-id $HOME/.config/scripts/alternating_layouts.py
+
 # Set a new wallpaper every hour and on first x startup
 exec --no-startup-id systemd-run --on-calendar="*:00:00" --user -- /usr/bin/feh --no-fehbg --randomize --bg-fill ~/.config/wallpapers/* --bg-fill ~/.config/wallpapers/*
 exec_always --no-startup-id feh --no-fehbg --randomize --bg-fill ~/.config/wallpapers/* --bg-fill ~/.config/wallpapers/*
