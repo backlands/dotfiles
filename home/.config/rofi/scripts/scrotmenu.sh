@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/scrotmenu.rasi"
+rofi_command="rofi -theme themes/scrotmenu.rasi -no-show-icons"
 
 ### Options ###
 screen=""

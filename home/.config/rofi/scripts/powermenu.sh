@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/powermenu.rasi"
+rofi_command="rofi -theme themes/powermenu.rasi -no-show-icons"
 
 ### Options ###
 power_off=""

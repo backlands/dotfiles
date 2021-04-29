@@ -27,11 +27,11 @@ entry {
 }
 #textbox-prompt-colon {
   expand: false;
-  str: "  : :  ";
+  str: "";
   padding: @apps-textbox-prompt-colon-padding;
 }
 #entry {
-  text-color: @accent;
+  text-color: white;
   padding: @entry-padding;
 }
 #element {
@@ -40,6 +40,13 @@ entry {
   border: @list-element-border;
   background-color: @background-light;
   border-color: @background-light;
+}
+element-icon {
+  size: 32px;
+  padding: 0 8px 0 0;
+}
+element-text {
+  padding: 8px 0;
 }
 #element.selected {
   background-color: @background-focus;

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/i3layoutmenu.rasi"
+rofi_command="rofi -theme themes/i3layoutmenu.rasi -no-show-icons"
 
 ### Options ###
 stacked=""
