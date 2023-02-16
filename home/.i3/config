@@ -25,7 +25,7 @@ font xft:Input Sans 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -34,10 +34,10 @@ bindsym $mod+Shift+q kill
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-# exec --no-startup-id volumeicon
-# bindsym $mod+Ctrl+m exec termite -e 'alsamixer'
-exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
+# #exec --no-startup-id volumeicon
+# bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
+# exec --no-startup-id pulseaudio
+# exec --no-startup-id pa-applet
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2dB+ unmute
@@ -96,7 +96,7 @@ bindsym $mod+w exec ~/.config/rofi/scripts/i3layoutmenu.sh
 bindsym $mod+Ctrl+Shift+b [class="Bitwarden"] scratchpad show
 bindsym $mod+Ctrl+Shift+s [class="Slack"] scratchpad show
 bindsym $mod+Ctrl+Shift+z [class="KeePassXC"] scratchpad show
-bindsym $mod+Ctrl+Shift+d [class="Discord"] scratchpad show
+bindsym $mod+Ctrl+Shift+d [class="discord"] scratchpad show
 bindsym $mod+Ctrl+Shift+p [class="Signal"] scratchpad show
 bindsym $mod+Ctrl+Shift+m [class="Google Play Music Desktop Player"] scratchpad show
 
@@ -105,7 +105,9 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 # Move workspace to monitor to the right (toggle when two screens)
-bindsym $mod+x move workspace to output left
+bindsym $mod+Ctrl+x move workspace to output primary
+bindsym $mod+Ctrl+c move workspace to output down
+bindsym $mod+Ctrl+v move workspace to output right
 
 # Set default configuration (only for home desktop monitor)
 bindsym $mod+m exec ~/.screenlayout/default.sh
@@ -121,8 +123,8 @@ set $ws7 7
 set $ws8 8
 
 # switch to workspace
-bindsym $mod+1 workspace $ws1; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
-bindsym $mod+2 workspace $ws2; exec [ $(ps h -C termite | wc -l) = 0 ] && /usr/bin/termite
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2; exec [ $(ps h -C alacritty | wc -l) = 0 ] && /usr/bin/alacritty
 bindsym $mod+3 workspace $ws3; exec [ $((ps h -C code || ps h -C code-oss) | wc -l) = 0 ] && /usr/bin/code
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
@@ -143,7 +145,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Open applications on specific workspaces
 assign [class="Chromium"] $ws1
 assign [class="firefox"] $ws1
-assign [class="Termite"] $ws2
+assign [class="Alacritty"] $ws2
 assign [class="^(code|code-oss)$"] $ws3
 assign [class="dbeaver"] $ws4
 assign [class="Steam"] $ws5
@@ -186,6 +188,7 @@ for_window [class="Arandr"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Thunar"] floating enable
 for_window [title="PyLNP"] floating enable
+for_window [class="Android Emulator"] enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -200,7 +203,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+p mode "$mode_launcher"
 set $mode_launcher (t)ermite, (f)irefox, (e)xplorer, restart (c)ompton, dismiss (d)unst, (h)elp
 mode "$mode_launcher" {
-    bindsym t exec termite, mode "default"
+    bindsym t exec alacritty, mode "default"
     bindsym f exec firefox, mode "default"
     bindsym e exec pcmanfm, mode "default"
     bindsym c exec --no-startup-id pkill compton, exec --no-startup-id compton -b, mode "default"

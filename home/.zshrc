@@ -1,10 +1,3 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Setup ZSH NVM
 export NVM_AUTO_USE=true
 source ~/.zshplugs/zsh-nvm/zsh-nvm.plugin.zsh
@@ -18,7 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export TERM='xterm'
+export TERM='alacritty'
 
 #ZLE_RPROMPT_INDENT=0
 alias vim="nvim"
@@ -47,3 +40,12 @@ function gitCleanRemoteBranches {
   git checkout "$DEVELOP" && git pull && git push --delete origin $(git branch -a --merged | grep origin | grep -v 'master\|release-\|develop\|demo\|staging\|HEAD' | sed 's/remotes\/origin\///')
 }
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

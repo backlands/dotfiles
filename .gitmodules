@@ -4,3 +4,6 @@
 [submodule "home/.themes"]
 	path = home/.themes
 	url = https://github.com/addy-dclxvi/gtk-theme-collections
+[submodule "home/.config/awesome/lib/bling"]
+	path = home/.config/awesome/lib/bling
+	url = git@github.com:BlingCorp/bling.git

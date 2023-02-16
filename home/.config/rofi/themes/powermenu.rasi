@@ -4,7 +4,7 @@
  */
 @import "shared/option-menu.rasi"
 #window {
-  padding: @option-5-window-padding;
+  padding: 0;
 }
 #listview {
   spacing: @option-5-listview-spacing;
