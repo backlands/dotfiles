@@ -65,7 +65,9 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
+			if [[ "$DESKTOP_SESSION" == 'awesome' ]]; then
+				kill `pgrep awesome`
+			elif [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
 				openbox --exit
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit

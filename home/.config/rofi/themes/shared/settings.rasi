@@ -1,6 +1,6 @@
 /**
  * Allows to change the settings of every menu simply by editing this file
  */
-@import "colorschemes/dracula.rasi"
+@import "colors/dracula.rasi"
 @import "resolutions/1920x1080.rasi"
 
