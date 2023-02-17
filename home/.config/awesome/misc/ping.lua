@@ -37,7 +37,7 @@ naughty.config.presets.low = {
 }
 
 naughty.config.presets.ok = naughty.config.presets.normal
-naughty.config.presets.info = naughty.config.presets.normal
+naughty.config.presets.info = naughty.config.presets.low
 naughty.config.presets.warn = naughty.config.presets.critical
 
 naughty.connect_signal("request::display", function(n)
@@ -68,12 +68,31 @@ naughty.connect_signal("request::display", function(n)
     local actions = wibox.widget {
         notification = n,
         base_layout = wibox.widget {
-            spacing = 8,
+            spacing = 50,
             layout = wibox.layout.flex.horizontal,
         },
         widget_template = action_widget,
         style = { underline_normal = false, underline_selected = true },
         widget = naughty.list.actions,
+    }
+
+    -- Album art for Spotify
+    local albumart = wibox.widget {
+        image = n.image,
+        resize = true,
+        halign = "center",
+        valign = "center",
+        forced_width = 50,
+        forced_height = 50,
+        widget = wibox.widget.imagebox
+    }
+
+    -- Separator
+    local separator = wibox.widget {
+        color = beautiful.xbackground,
+        forced_width = dpi(10),
+        forced_height = dpi(10),
+        widget = wibox.widget.separator
     }
 
     naughty.layout.box {
@@ -86,6 +105,9 @@ naughty.connect_signal("request::display", function(n)
                     {
                         {
                             {
+                                -- Only render image if it exists
+                                n.image and albumart,
+                                n.image and separator,
                                 {
                                     {
                                         step_function = wibox.container.scroll
@@ -98,7 +120,7 @@ naughty.connect_signal("request::display", function(n)
                                             align = "left",
                                             widget = wibox.widget.textbox,
                                         },
-                                        -- forced_width = dpi(204),
+                                        forced_width = dpi(204),
                                         widget = wibox.container.scroll.horizontal,
                                     },
                                     {
@@ -108,9 +130,11 @@ naughty.connect_signal("request::display", function(n)
                                         widget = wibox.widget.textbox,
                                     },
                                     spacing = 5,
+                                    margins = 10,
                                     layout = wibox.layout.flex.vertical,
                                 },
-                                layout = wibox.layout.align.vertical,
+                                spacing = 20,
+                                layout = wibox.layout.align.horizontal,
                             },
                             {
                                 { actions, layout = wibox.layout.fixed.vertical },
@@ -136,7 +160,7 @@ naughty.connect_signal("request::display", function(n)
             },
             widget = wibox.container.background,
             shape = helpers.rrect(beautiful.notification_border_radius + 1),
-            border_color = theme.xcolor4,
+            border_color = beautiful.xcolor4,
             border_width = dpi(4),
             bg = beautiful.bg_normal,
             margins = beautiful.notification_margin,

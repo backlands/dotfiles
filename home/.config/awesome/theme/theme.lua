@@ -70,7 +70,7 @@ theme.fg_minimize = theme.xforeground
 
 -- Gaps and borders
 theme.useless_gap = dpi(5)
--- theme.border_radius = dpi(10)
+theme.border_radius = dpi(10)
 theme.border_outer_width = dpi(3)
 theme.border_inner_width = dpi(3)
 theme.border_outer_normal = theme.xcolor3
@@ -82,41 +82,6 @@ theme.border_normal = theme.xcolor4
 theme.border_focus  = theme.xcolor5
 theme.border_marked = theme.xcolor6
 
-theme.titlebar_enabled = true
-theme.titlebar_font = theme.font_name .. "9"
-theme.titlebar_size = dpi(35)
-theme.titlebar_pos = "top"
-theme.titlebar_bg_normal = theme.xbackground
-theme.titlebar_bg_focus = theme.xbackground
-theme.titlebar_fg_normal = theme.xforeground
-theme.titlebar_fg_focus = theme.xforeground
-
-theme.titlebar_close_button_normal = titlebar_dir .. "inactive.png"
-theme.titlebar_close_button_focus  = titlebar_dir .. "close.png"
-
-theme.titlebar_minimize_button_normal = titlebar_dir .. "inactive.png"
-theme.titlebar_minimize_button_focus  = titlebar_dir .. "minimize.png"
-
-theme.titlebar_ontop_button_normal_inactive = titlebar_dir .. "inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = titlebar_dir .. "ontop.png"
-theme.titlebar_ontop_button_normal_active   = titlebar_dir .. "inactive.png"
-theme.titlebar_ontop_button_focus_active    = titlebar_dir .. "ontop.png"
-
-theme.titlebar_sticky_button_normal_inactive = titlebar_dir .. "inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = titlebar_dir .. "sticky.png"
-theme.titlebar_sticky_button_normal_active   = titlebar_dir .. "inactive.png"
-theme.titlebar_sticky_button_focus_active    = titlebar_dir .. "sticky.png"
-
-theme.titlebar_floating_button_normal_inactive = titlebar_dir .. "inactive.png"
-theme.titlebar_floating_button_focus_inactive  = titlebar_dir .. "floating.png"
-theme.titlebar_floating_button_normal_active   = titlebar_dir .. "inactive.png"
-theme.titlebar_floating_button_focus_active    = titlebar_dir .. "floating.png"
-
-theme.titlebar_maximized_button_normal_inactive = titlebar_dir .. "inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = titlebar_dir .. "maximize.png"
-theme.titlebar_maximized_button_normal_active   = titlebar_dir .. "inactive.png"
-theme.titlebar_maximized_button_focus_active    = titlebar_dir .. "maximize.png"
-
 ----------
 
 -- Wibar
@@ -127,6 +92,10 @@ theme.wibar_fg = theme.xforeground
 theme.wibar_border_radius = dpi(0)
 theme.wibar_border_width = dpi(0)
 theme.wibar_border_color = theme.xcolor0
+
+-- Systray
+theme.bg_systray = theme.xbackground
+theme.systray_icon_spacing = 5
 
 -- Tooltip
 theme.tooltip_height = dpi(490)
@@ -275,6 +244,7 @@ theme.notification_max_height = dpi(240)
 theme.notification_margin = dpi(10)
 theme.notification_icon_size = dpi(40)
 
+theme.notification_spacing = 10
 theme.notification_bg = theme.transparent
 theme.notification_fg = theme.xforeground
 

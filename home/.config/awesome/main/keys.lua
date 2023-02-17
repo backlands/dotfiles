@@ -30,6 +30,17 @@ shift = "Shift"
 ------------------------
 
 awful.keyboard.append_global_keybindings({
+---- Testing
+
+    -- Notifications
+    awful.key({mod}, "`", function()
+        naughty.notification {
+            -- urgency = "critical",
+            title = "A test notification as requested",
+            message = "Si, si, this is indeed a test, very good.",
+        }
+    end,
+    {description = "Spawn terminal", group = "App"}),
 
 ---- App
 

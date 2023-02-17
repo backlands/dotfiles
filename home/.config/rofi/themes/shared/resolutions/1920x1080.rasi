@@ -2,8 +2,8 @@
   /* General */
   text-font:                            "Input Sans Light 12";
   text-font-mono:                       "Input Mono Light 12";
-  icon-font:                            "Font Awesome 5 60";
-  icon-font-small:                      "Font Awesome 5 24";
+  icon-font:                            "Font Awesome 6 60";
+  icon-font-small:                      "Font Awesome 6 24";
   inputbar-margin:                      4px 4px;
   prompt-padding:                       16px 20px;
   entry-padding:                        18px 16px 16px 0px;

@@ -16,8 +16,7 @@ run mpDris2 # add playerctl support to mpd
 # File sync software
 run insync start
 
-# wallpaper (not recommended, use awesome instead)
-# run nitrogen --restore #; sleep 1; compton -b
+# wallpaper
 run feh --no-fehbg --randomize --bg-fill ~/.local/share/backgrounds/Arelith/* --bg-fill ~/.local/share/backgrounds/Arelith/*
 
 # scratchpad applications
@@ -26,7 +25,7 @@ run keepassxc-proxy
 run slack
 
 # Default screen configuration
-# run $HOME/.screenlayout/default.sh
+run $HOME/.screenlayout/default.sh
 
 # compositor
 run picom
@@ -37,8 +36,5 @@ run nm-applet
 # package manager tray
 run pamac-tray
 
-# redshift
-# run redshift
-
 # auth
-# run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

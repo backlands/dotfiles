@@ -327,6 +327,18 @@ awful.screen.connect_for_each_screen(function(s)
         visible = true
     })
 
+    -- Systray
+    local systray = wibox.widget {
+        {
+            wibox.widget.systray(),
+            top    = 2,
+            bottom = 2,
+            widget = wibox.container.margin,
+        },
+        bg         = beautiful.xbackground,
+        widget     = wibox.container.background,
+    }
+
     -- Add widgets to wibar
     s.mywibar:setup{
         {
@@ -342,7 +354,8 @@ awful.screen.connect_for_each_screen(function(s)
                 separator,
                 time,
                 separator,
-                wibox.widget.systray(),
+                systray,
+                separator,
                 layoutbox,
                 spacing = dpi(10),
                 layout = wibox.layout.fixed.horizontal

@@ -29,8 +29,8 @@ screenshot = "~/.config/rofi/scripts/scrotmenu.sh"
 file_manager = terminal .. " --class file -e ranger"
 music_client = terminal .. " --class music -e ncmpcpp"
 
-openweathermap_key = ""
-openweathermap_city_id = ""
+openweathermap_key = "24789037d5c1a14f2d9a1439221bdbb7"
+openweathermap_city_id = "5913490"
 weather_units = "metric" -- metric or imperial
 
 
