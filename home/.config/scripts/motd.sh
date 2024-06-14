@@ -10,4 +10,5 @@ echo '          \/     \/     \/     \/         \/     \/      \/    \/ '
 echo ''
 echo ''
 
-neofetch
+fastfetch
+

@@ -1,0 +1,12 @@
+[pyprland]
+plugins = [
+  "wallpapers",
+]
+
+[wallpapers]
+path = "/home/erick/Pictures/Wallpapers/Arelith"
+interval = 60
+extensions = ["jpg", "jpeg", "png"]
+recurse = true
+command = "swww img --transition-type any \"[file]\""
+clear_command = "swww clear"
